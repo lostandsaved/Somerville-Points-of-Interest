@@ -1,5 +1,7 @@
 ## Neighborhood Map Project - Somerville Points of Interest
 
+This is a map of the downtown I live near. The points of interest are my favoriate places to eat, and an arcade.
+
 ## Usage
 
 Visit: [Index page](https://lostandsaved.github.io/Somerville-Points-of-Interest/index.html)
