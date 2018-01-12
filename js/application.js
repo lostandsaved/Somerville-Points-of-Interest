@@ -6,7 +6,7 @@ var pois = [
   },
   {
     name: 'Conlins Cafe & Bakery',
-    lat: 40.568592, lng: -74.613394
+    lat: 40.568478, lng: -74.613335
   },
   {
     name: 'Retro Classics Video Games',
