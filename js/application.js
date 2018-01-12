@@ -60,18 +60,16 @@ POILocations = function(info) {
   //jQuery call to get Foursqure information.
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
     $.getJSON(foursquareURL).done(function (info) {
-      var results = info.response.venues[0];
-      if (typeof self.URL == 'undefined') {
-        self.URL = 'This location has no website.';
-      }
-      else {
+        var results = info.response.venues[0];
         self.URL = results.url;
-      }
-      self.street = results.location.formattedAddress[0] || '';
-      self.city = results.location.formattedAddress[1] || '';
-      self.phone = results.contact.phone || '';
+        if (typeof self.URL === 'undefined') {
+            self.URL = '';
+        }
+        self.street = results.location.formattedAddress[0] || 'Address Unavailable';
+        self.city = results.location.formattedAddress[1] || 'Address Unavailable';
+        self.phone = results.contact.phone || 'Phone Unavailable';
     }).fail(function () {
-      $('.list').html('An error occurred with the Foursqure API. Refresh this page and try again.');
+        $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
     });
 
   //Create content for the InfoWindow
@@ -83,6 +81,16 @@ POILocations = function(info) {
     map: map,
     title: info.name
   });
+
+  //Show the filteredlocations filtered as the user types
+  this.showMarker = ko.computed(function() {
+    if(this.visible() === true) {
+      this.marker.setMap(map);
+    } else {
+      this.marker.setMap(null);
+    }
+    return true;
+  }, this);
 
   //Display the InfoWindow when a marker or POI in the list is selected
   this.marker.addListener('click', function(){
