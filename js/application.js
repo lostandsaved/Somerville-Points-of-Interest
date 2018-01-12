@@ -2,16 +2,16 @@
 var pois = [
   {
     name: 'Yutaka Hibachi',
-    lat: 40.569288033171986, lng: -7461445907014517
+    lat: 40.569244, lng: -74.614424
   },
-  /*{
+  {
     name: 'Conlins Cafe & Bakery',
-    lat: 40.568478, lng: -74.613335
-  },*/
-  /*{
+    lat: 40.568592, lng: -74.613394
+  },
+  {
     name: 'Retro Classics Video Games',
-    lat: 40.56807879782992, lng: -74.61300185745793
-  },*/
+    lat: 40.568631, lng: -74.612866
+  },
   {
     name: 'Verve Restaurant',
     lat: 40.568128, lng: -74.611212
@@ -55,10 +55,10 @@ POILocations = function(info) {
   clientID = '35CLUSNO4IPZ1EFTCGQE2AYUC3IMNV5YYRY5JIDDWCCE3G2J';
   clientSecret = '4KG3C4TAWELY0MCVIO20CJ3Q4O5T2LFVYTJV4NBFQA2AYOTU';
 
-  var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20170801' + '&query=' + this.name;
+  var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180112' + '&query=' + this.name;
 
   //jQuery call to get Foursqure information.
-  //$.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
+  $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
     $.getJSON(foursquareURL).done(function (info) {
         var results = info.response.venues[0];
         self.URL = results.url;
