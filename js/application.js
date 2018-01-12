@@ -18,7 +18,7 @@ var pois = [
   },
   {
     name: 'Alfonsos Family Trattoria',
-    lat: 40.569903, lng: -74.616362
+    lat: 40.568978759705104, lng: -74.61476839550613
   },
   {
     name: 'Mannion\'s Pub',
