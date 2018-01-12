@@ -57,31 +57,16 @@ POILocations = function(info) {
 
   var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180112' + '&query=' + this.name;
 
-  //jQuery call to get Foursqure information.
- /* $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
-      $.getJSON(foursquareURL).done(function (info) {
-        var results = info.response.venues[0];
-        self.URL = results.url;
-        if (typeof self.URL === 'undefined') {
-            self.URL = '';
-        }
-        self.street = results.location.formattedAddress[0] || 'Address Unavailable';
-        self.city = results.location.formattedAddress[1] || 'Address Unavailable';
-        self.phone = results.contact.phone || 'Phone Unavailable';
-    }).fail(function () {
-        $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
-    });*/
-  
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
-    $.getJSON(foursquareURL).done(function (info) {
-        var results = info.response.venues[0];
-        self.URL = (results && results.url) ? results.url : '';
-        self.street = (results && results.location && results.location.formattedAddress[0]>=0) ? results.location.formattedAddress[0] : 'Address Unavailable';
-        self.city = (results && results.location && results.location.formattedAddress[1]>=1) ? results.location.formattedAddress[1] : 'Address Unavailable';
-        self.phone = (results && results.contact && results.contact.phone) ? results.contact.phone : 'Phone Unavailable';
-    }).fail(function () {
-        $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
-    });
+      $.getJSON(foursquareURL).done(function (info) {
+          var results = info.response.venues[0];
+          self.URL = (results && results.url) ? results.url : '';
+          self.street = (results && results.location && results.location.formattedAddress && results.location.formattedAddress.length>=0) ? results.location.formattedAddress[0] : 'Address Unavailable';
+          self.city = (results && results.location && results.location.formattedAddress && results.location.formattedAddress.length>=1) ? results.location.formattedAddress[1] : 'Address Unavailable';
+          self.phone = (results && results.contact && results.contact.phone) ? results.contact.phone : 'Phone Unavailable';
+      }).fail(function () {
+          $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
+      });
 
   //Create content for the InfoWindow
   this.infoWindow = new google.maps.InfoWindow({content: self.infoWindowContent});
