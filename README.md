@@ -11,6 +11,7 @@ Open the menu in the top left to filter points of interest, and click a marker f
 
 * My mentor (Mary) was my primary source of help
 * Slack chat application
+* https://www.w3schools.com/howto/howto_js_sidenav.asp
 * http://knockoutjs.com/documentation/foreach-binding.html
 * https://developers.google.com/maps/documentation/javascript/markers
 * http://api.jquery.com/jQuery.ajaxSetup/
