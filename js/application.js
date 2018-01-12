@@ -59,30 +59,7 @@ POILocations = function(info) {
 
   //jQuery call to get Foursqure information.
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
-  $.getJSON(foursquareURL).done(function (info) {
-  //Get response property if exists
-   var response = info.response || {venues: []};
-   //If no venues set false
-   var results = response.venues[0] || false;
-	
-   if (results) {
-     self.URL = results.url || false;
-     if (self.URL) {
-       self.street = results.location.formattedAddress[0] || 'Address Unavailable';
-       self.city = results.location.formattedAddress[1] || 'Address Unavailable';
-       self.phone = results.contact.phone || 'Phone Unavailable';
-       valid = true;
-       }
-    }
-  if (!valid) {
-    alert('No results found');
-  }
-}).fail(function () {
-  $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
-});
-  
-
-   /* $.getJSON(foursquareURL).done(function (info) {
+    $.getJSON(foursquareURL).done(function (info) {
         var results = info.response.venues[0];
         self.URL = results.url;
         if (typeof self.URL === 'undefined') {
@@ -93,7 +70,7 @@ POILocations = function(info) {
         self.phone = results.contact.phone || 'Phone Unavailable';
     }).fail(function () {
         $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
-    });*/
+    });
 
   //Create content for the InfoWindow
   this.infoWindow = new google.maps.InfoWindow({content: self.infoWindowContent});
