@@ -58,6 +58,7 @@ POILocations = function(info) {
   var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180112' + '&query=' + this.name;
 
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
+      //Foursqure call - check the for exisitance of properties and set them to the correct variable if they exist. (js shorthand to make easier to read)
       $.getJSON(foursquareURL).done(function (info) {
           var results = info.response.venues[0];
           self.URL = (results && results.url) ? results.url : '';

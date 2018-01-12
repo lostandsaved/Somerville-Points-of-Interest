@@ -14,6 +14,7 @@ You can use the application one of two ways:
 
 * My mentor (Mary) was my primary source of help
 * Slack chat application
+* https://hackernoon.com/12-amazing-javascript-shorthand-techniques-fef16cdbc7fe
 * https://www.w3schools.com/howto/howto_js_sidenav.asp
 * http://knockoutjs.com/documentation/foreach-binding.html
 * https://developers.google.com/maps/documentation/javascript/markers
