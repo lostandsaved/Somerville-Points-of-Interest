@@ -100,7 +100,10 @@ POILocations = function(info) {
     self.infoWindow.open(map, this);
     self.marker.setAnimation(google.maps.Animation.DROP);
     self.marker.setIcon('https://www.google.com/mapfiles/marker_green.png');
-  });
+    	setTimeout(function() {
+    		self.marker.setIcon('https://www.google.com/mapfiles/marker_orange.png');
+     }, 3000); //Turn the marker green after 3 seconds so the user knows they previosly viewed it
+	});
 
   // Makes the marker bounce animation whenever clicked.
   this.poiClicked = function(poi) {
