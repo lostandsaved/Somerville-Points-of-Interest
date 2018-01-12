@@ -25,6 +25,7 @@ html, body {
   transition: 0.5s;
   padding-top: 65px;
   list-style-type: none;
+  color: white;
 }
 
 .sidenav a {
@@ -37,6 +38,11 @@ html, body {
   cursor: pointer;
   list-style-position: inside;
   transition: 0.3s;
+}
+
+.errorContainer {
+  color: red;
+  font-weight: bold;
 }
 
 .poiSearch {
