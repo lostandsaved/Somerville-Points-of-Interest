@@ -9,7 +9,8 @@ You can use the application one of two ways:
 1. Clone or download the repository to your local machine and run the index.html page.
 
 2. Visit: [Index page](https://lostandsaved.github.io/Somerville-Points-of-Interest/index.html)
-Open the menu in the top left to filter points of interest, and click a marker for more information about the location.
+
+Open the menu in the top left to filter points of interest. Click a marker for more information about the location.
 
 ## Credits
 
