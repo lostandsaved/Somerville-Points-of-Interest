@@ -58,6 +58,28 @@ POILocations = function(info) {
   var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20170801' + '&query=' + this.name;
 
   //jQuery call to get Foursqure information.
+  $.getJSON(foursquareURL).done(function (info) {
+  //Get response property if exists
+   var response = info.response || {venues: []};
+   //If no venues set false
+   var results = response.venues[0] || false;
+	
+   if (results) {
+     self.URL = results.url || false;
+     if (self.URL) {
+       self.street = results.location.formattedAddress[0] || 'Address Unavailable';
+       self.city = results.location.formattedAddress[1] || 'Address Unavailable';
+       self.phone = results.contact.phone || 'Phone Unavailable';
+       valid = true;
+       }
+    }
+  if (!valid) {
+    alert('No results found');
+  }
+}).fail(function () {
+  $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
+});
+  
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
     $.getJSON(foursquareURL).done(function (info) {
         var results = info.response.venues[0];
