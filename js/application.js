@@ -52,8 +52,8 @@ POILocations = function(info) {
   this.visible = ko.observable(true);
 
   //Foursquare Keys
-  clientID = 'YA5YCGZRA414QRZ2HR4GG24H5Y45LNSLO02Z1C3BJ3N4CCWH';
-  clientSecret = 'X50UXR4JITKLCC5VBEERFFT5LMGTTHIROU1ZDEZBFWMJEITO';
+  clientID = '35CLUSNO4IPZ1EFTCGQE2AYUC3IMNV5YYRY5JIDDWCCE3G2J';
+  clientSecret = '4KG3C4TAWELY0MCVIO20CJ3Q4O5T2LFVYTJV4NBFQA2AYOTU';
 
   var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180112' + '&query=' + this.name;
 
