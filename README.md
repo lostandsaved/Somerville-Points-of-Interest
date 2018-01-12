@@ -15,4 +15,9 @@ Open the menu in the top left to filter points of interest, and click a marker f
 * http://api.jquery.com/jQuery.ajaxSetup/
 * http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
 * http://learnjavascript.co.uk/jq/reference/ajax/getjson.html
-* 
+* https://developers.google.com/maps/documentation/javascript/ (Several pages)
+
+## Future Updates
+
+* Only show one green marker at a time
+* Include more locations and add Yelp reviews
