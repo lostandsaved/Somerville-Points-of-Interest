@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Somerville, NJ Map</title>
+</head>
+<body>
+  <div id="sideNavBar" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="poiSearch">
+      <input name="poiSearch" placeholder="Enter a POI" data-bind="textInput: poiQry, valueUpdate: 'afterkeydown'">
+    </div>
+    <div data-bind="template: {name:'thePOI', foreach:filteredPOIs}"></div>
+    <script type="text/html" id="thePOI">
+      <a data-bind="text: name, click: poiClicked"></a>
+    </script>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  <div class="map" id="map"></div>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/knockout-3.4.2.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/application.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAln5r-K7Znf1wKZZY-JioioEInP2TwOwk&v=3&callback=initMap" onerror="displayError()"></script>
+</body>
+</html>
