@@ -4,14 +4,14 @@ var pois = [
     name: 'Yutaka Hibachi',
     lat: 40.569244, lng: -74.614424
   },
-  {
+  /*{
     name: 'Conlins Cafe & Bakery',
     lat: 40.568478, lng: -74.613335
-  },
-  {
+  },*/
+ /* {
     name: 'Retro Classics Video Games',
     lat: 40.568631, lng: -74.612866
-  },
+  },*/
   {
     name: 'Verve Restaurant',
     lat: 40.568128, lng: -74.611212
