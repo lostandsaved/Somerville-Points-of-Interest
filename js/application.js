@@ -55,7 +55,7 @@ POILocations = function(info) {
   clientID = '35CLUSNO4IPZ1EFTCGQE2AYUC3IMNV5YYRY5JIDDWCCE3G2J';
   clientSecret = '4KG3C4TAWELY0MCVIO20CJ3Q4O5T2LFVYTJV4NBFQA2AYOTU';
 
-  var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180112' + '&query=' + this.name;
+  var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20170801' + '&query=' + this.name;
 
   //jQuery call to get Foursqure information.
   $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
