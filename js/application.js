@@ -76,8 +76,8 @@ POILocations = function(info) {
     $.getJSON(foursquareURL).done(function (info) {
         var results = info.response.venues[0];
         self.URL = (results && results.url) ? results.url : '';
-        self.street = (results && results.location && results.location.formattedAddress>=0) ? results.location.formattedAddress[0] : 'Address Unavailable';
-        self.city = (results && results.location && results.location.formattedAddress>=1) ? results.location.formattedAddress[1] : 'Address Unavailable';
+        self.street = (results && results.location && results.location.formattedAddress[0]>=0) ? results.location.formattedAddress[0] : 'Address Unavailable';
+        self.city = (results && results.location && results.location.formattedAddress[1]>=1) ? results.location.formattedAddress[1] : 'Address Unavailable';
         self.phone = (results && results.contact && results.contact.phone) ? results.contact.phone : 'Phone Unavailable';
     }).fail(function () {
         $('.errorContainer').html('An error occurred with the Foursqure API. Refresh this page and try again.');
