@@ -58,7 +58,7 @@ POILocations = function(info) {
   var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + this.lat + ',' + this.lng + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20170801' + '&query=' + this.name;
 
   //jQuery call to get Foursqure information.
-  $.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
+  //$.ajaxSetup({ timeout: 3000 }); //Timeout after 3 seconds and display fail
     $.getJSON(foursquareURL).done(function (info) {
         var results = info.response.venues[0];
         self.URL = results.url;
